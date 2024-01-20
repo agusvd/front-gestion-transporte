@@ -42,7 +42,7 @@ const PageLogin = () => {
     const getRolePath = (role) => {
         switch (role) {
             case 'admin':
-                return '/inicio';
+                return '/dashboard';
             case 'conductor':
                 return '/transporte';
             case 'trabajador':
@@ -58,7 +58,7 @@ const PageLogin = () => {
                 <div className='shadow-xl w-[350px]'>
                     <div className='flex flex-col'>
                         <div className='p-10 flex justify-center items-center'>
-                            <img src={logo} className='w-full h-full'/>
+                            <img src={logo} className='w-full h-full' />
                         </div>
                         <form className='flex flex-col justify-center bg-gray-100'>
                             <div className='p-2'>

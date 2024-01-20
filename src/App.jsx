@@ -1,18 +1,19 @@
 import './App.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import PageInicio from './components/pages/PageInicio'
-import PageLogin from './components/pages/PageLogin'
-import PageTransporte from './components/pages/PageTransporte'
+// inicio de sesion
+import PageLogin from './pages/login/PageLogin'
+// dashboard
+import Layout from './pages/dashboard/home/layout'
+
 
 function App() {
   return (
     <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<PageLogin/>} />
-          <Route path="/inicio" element={<PageInicio/>} />
-          <Route path="/transporte" element={<PageTransporte />} />
-        </Routes>
-      </BrowserRouter>
+      <Routes>
+        <Route path="/" element={<PageLogin />} />
+        <Route path="/dashboard" element={<Layout />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
