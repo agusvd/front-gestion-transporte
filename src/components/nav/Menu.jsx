@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { BiHomeAlt, BiCar, BiCheckCircle } from "react-icons/bi";
 
-const NavMobileTransporte = () => {
+const Menu = () => {
     return (
         <div className='sticky bottom-0'>
             <div className='flex w-full justify-around bg-gray-200'>
@@ -20,4 +20,4 @@ const NavMobileTransporte = () => {
     )
 }
 
-export default NavMobileTransporte
+export default Menu
