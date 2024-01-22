@@ -34,8 +34,8 @@ const Sidebar = () => {
                                     <h2>Trabajadores</h2>
                                 </div>
                             </Link>
-                            <Link to='/dashboard/gestión'>
-                                <div className={`flex items-center gap-4 m-4 rounded-xl p-2 text-white hover:bg-[#272829] duration-300 ease-in-out ${location.pathname === '/dashboard/gestión' && 'bg-[#272829]'}`}>
+                            <Link to='/dashboard/gestion'>
+                                <div className={`flex items-center gap-4 m-4 rounded-xl p-2 text-white hover:bg-[#272829] duration-300 ease-in-out ${location.pathname === '/dashboard/gestion' && 'bg-[#272829]'}`}>
                                     <FiCommand size={25} />
                                     <h2>Gestión</h2>
                                 </div>
