@@ -6,6 +6,8 @@ import PageLogin from './pages/login/PageLogin'
 import Dashboard from './pages/dashboard/home/Layout'
 import Employees from './pages/dashboard/employees/Layout'
 import Managment from './pages/dashboard/managment/Layout'
+// conductor (mobile)
+import HomeMobile from './pages/travel/home/Layout'
 
 function App() {
   return (
@@ -15,6 +17,7 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/dashboard/trabajadores" element={<Employees />} />
         <Route path="/dashboard/gestion" element={<Managment />} />
+        <Route path="/homeApp" element={<HomeMobile />} />
         <Route path="*" element={<h1>404</h1>} />
       </Routes>
     </BrowserRouter>

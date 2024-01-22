@@ -1,19 +1,22 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { BiHomeAlt, BiCar, BiCheckCircle } from "react-icons/bi";
+import { FiHome ,FiSettings, FiClipboard } from "react-icons/fi";
+
+
+
 
 const Menu = () => {
     return (
         <div className='sticky bottom-0'>
-            <div className='flex w-full justify-around bg-gray-200'>
+            <div className='flex w-full h-[50px] justify-around items-center bg-[#171717]'>
                 <Link className=''>
-                    <BiCar size={40} className='text-black' />
+                    <FiClipboard size={35} className='text-white' />
                 </Link>
                 <Link className=''>
-                    <BiHomeAlt size={40} className='text-black' />
+                    <FiHome size={35} className='text-white' />
                 </Link>
                 <Link className=''>
-                    <BiCheckCircle size={40} className='text-black' />
+                    <FiSettings size={35} className='text-white' />
                 </Link>
             </div>
         </div>

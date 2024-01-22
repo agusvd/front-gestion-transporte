@@ -44,9 +44,9 @@ const PageLogin = () => {
             case 'admin':
                 return '/dashboard';
             case 'conductor':
-                return '/transporte';
+                return '/homeApp';
             case 'trabajador':
-                return '/trabajador';
+                return '/homeApp';
             default:
                 return null;
         }

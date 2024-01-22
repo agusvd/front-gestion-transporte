@@ -1,4 +1,9 @@
 import React, { useState } from 'react';
+import Button from '../../../components/ui/buttons/Button';
+import ButtonNo from '../../../components/ui/buttons/ButtonNo';
+import ButtonSave from '../../../components/ui/buttons/ButtonSave';
+import Input from '../../../components/ui/buttons/Input';
+import Select from '../../../components/ui/buttons/Select';
 
 const Management = () => {
     const employees = [
@@ -18,13 +23,9 @@ const Management = () => {
 
     const cambiarPagina = (page) => {
         setCurrentPage(page);
-        setSelectedEmployee(null);
     };
     const regresarLista = () => {
         setSelectedEmployee(null);
-    };
-    const verTablas = () => {
-        cambiarPagina(2);
     };
 
     const gestionarTransporte = (employee) => {
@@ -39,73 +40,62 @@ const Management = () => {
                     <h2 className='text-3xl text-white font-bold'>Gestión de Transporte</h2>
                 </div>
                 <div className='pt-2 flex gap-2 border-b-2 border-[#272829] p-2'>
-                    <button
-                        className='bg-black hover:bg-[#272829] rounded-md p-2 text-center text-white'
-                        onClick={() => cambiarPagina(1)}
-                    >
+                    <Button onClick={() => cambiarPagina(1)}>
                         Gestionar trabajadores
-                    </button>
-                    <button
-                        className='bg-black hover:bg-[#272829] rounded-md p-2 text-center text-white'
-                        onClick={verTablas}
-                    >
-                        Ver tablas
-                    </button>
+                    </Button>
+                    <Button onClick={() => cambiarPagina(2)}>
+                        Ver Gestion
+                    </Button>
                 </div>
 
                 {currentPage === 1 && (
                     <div className='pt-2'>
-                        <ul className='flex flex-col gap-4'>
+                        <ul className='grid grid-cols-2 gap-4'>
                             {employees.map((employee) => (
-                                <li key={employee.id} className='hover:bg-[#272829] p-4 rounded-md flex items-center gap-2 '>
-                                    <p className='text-white font-semibold'>{employee.name}</p>
-                                    <button className='bg-blue-500 text-white rounded-md p-2' onClick={() => gestionarTransporte(employee)}>
-                                        Gestionar
-                                    </button>
+                                <div className='flex flex-col'>
+                                    <div key={employee.id} className='hover:bg-[#272829] p-4 rounded-xl flex items-center gap-2 justify-between'>
+                                        <p className='text-white font-semibold'>{employee.name}</p>
+                                        <Button onClick={() => gestionarTransporte(employee)}>
+                                            Gestionar
+                                        </Button>
+
+                                    </div>
                                     {selectedEmployee && selectedEmployee.id === employee.id && (
-                                        <div className='flex flex-col'>
-                                            <div className='flex space-x-2'>
-                                                <input
-                                                    type='date'
-                                                    value={selectedDate}
-                                                    onChange={(e) => setSelectedDate(e.target.value)}
-                                                    className='p-2 border border-gray-600 rounded-md bg-black text-white'
-                                                />
-                                                <select
-                                                    value={selectedTransport}
-                                                    onChange={(e) => setSelectedTransport(e.target.value)}
-                                                    className='rounded-md text-white bg-black border-gray-600 border'
-                                                >
+                                        <div className='flex flex-col col-span-2 pt-5'>
+                                            <div className='flex justify-between gap-4 p-4'>
+                                                <Input type='date' value={selectedDate} onChange={(e) => setSelectedDate(e.target.value)} />
+                                                <Select value={selectedTransport} onChange={(e) => setSelectedTransport(e.target.value)}>
                                                     <option value=''>Seleccionar transporte</option>
                                                     <option value='VAN'>VAN</option>
                                                     <option value='TAXI'>TAXI</option>
-                                                </select>
-                                                <button
-                                                    //onClick={guardarGestion}
-                                                    className='p-2 bg-blue-500 text-white rounded-md'
-                                                >
+                                                </Select>
+                                                <ButtonSave /* onClick={guardarGestion}*/>
                                                     Guardar
-                                                </button>
-                                                <button
-                                                    onClick={regresarLista}
-                                                    className='p-2 bg-red-500 text-white rounded-md'
-                                                >
+                                                </ButtonSave>
+                                                <ButtonNo onClick={regresarLista}>
                                                     Cancelar
-                                                </button>
+                                                </ButtonNo>
                                             </div>
                                         </div>
                                     )}
-                                </li>
+                                </div>
                             ))}
+
                         </ul>
                     </div>
                 )}
 
                 {currentPage === 2 && (
-                    <div>
-                        <h3 className='text-xl text-white font-bold mb-2'>
-                            Ver Tablas
-                        </h3>
+                    <div className='pt-2'>
+                        <div className='w-full bg-[#202020] border-white border p-2 rounded-t-xl border-b-0 flex justify-between items-center'>
+                            <h2 className='text-white text-2xl p-2 w-full'>Filtrar por fecha</h2>
+                            <div className='flex justify-center items-center gap-5'>
+                                <Input type='date' />
+                                <Button>Buscar</Button>
+                            </div>
+
+
+                        </div>
                         <table className='table-auto border border-white w-full'>
                             <thead>
                                 <tr>
@@ -116,7 +106,7 @@ const Management = () => {
                                 </tr>
                             </thead>
                             <tbody>
-                                
+
                             </tbody>
                         </table>
                     </div>
