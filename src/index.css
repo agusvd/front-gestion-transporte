@@ -1,8 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @font-face {
-    font-family: 'Avenir Next';
-    src: local('Avenir Next'), url(./fonts/AvenirNextLTPro-Bold.otf) format('opentype');
+	font-family: 'Avenir Next';
+	src: local('Avenir Next'), url(./fonts/AvenirNextLTPro-Bold.otf) format('opentype');
+}
+
+.wallpaper {
+	background-image: url('/public/fondo.jpeg');
+	display: block;
+	background-size: cover;
+	z-index: -1;
+}
+
+.glass {
+	background: rgba(0, 0, 0, 0.21);
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(10.7px);
+	-webkit-backdrop-filter: blur(10.7px);
+
+}
+
+.mayor {
+	z-index: 100;
+}
+
+.rbc-calendar {
+    /* Cambiar el color de fondo del calendario */
+    background: rgba(0, 0, 0, 0.21);
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(10.7px);
+	-webkit-backdrop-filter: blur(10.7px);
+}
+
+.rbc-header {
+    /* Cambiar el color de fondo del encabezado del calendario */
+	background: rgba(0, 0, 0, 0.21);
+    color: white; /* Cambiar el color del texto del encabezado */
+}
+
+.rbc-header + .rbc-header {
+    /* Cambiar el color de fondo del segundo nivel de encabezado */
+    background: rgba(0, 0, 0, 0.21);
+	color: white;
+}
+
+.rbc-date-cell {
+    /* Cambiar el color de fondo de las celdas de fecha */
+    background: rgba(0, 0, 0, 0.21);
+	color: white
+}
+
+.rbc-event {
+    /* Cambiar el color de fondo de los eventos */
+    background: rgba(54, 10, 129, 0.727);
+    color: #fff; /* Cambiar el color del texto del evento */
+}
+
+.rbc-today {
+    /* Cambiar el estilo de la fecha actual */
+    border: 2px solid gray;
+	background: rgba(254, 254, 254, 0.21);
+
+}
+
+.rbc-selected {
+    /* Cambiar el estilo de la fecha seleccionada */
+    background-color: #007bff; /* Color azul */
+    color: #fff; /* Cambiar el color del texto de la fecha seleccionada */
 }

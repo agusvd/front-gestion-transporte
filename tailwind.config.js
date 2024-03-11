@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
+import animations from '@midudev/tailwind-animations'
+
 export default {
-  darkMode: ['class'],
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -9,8 +10,9 @@ export default {
     extend: {
       fontFamily: {
         'primary': ['Avenir Next', 'sans-serif'],
+        'secondary': ['Lato'],
       },
     },
   },
-  plugins: [require("daisyui")],
+  plugins: [animations, require("daisyui")],
 }
